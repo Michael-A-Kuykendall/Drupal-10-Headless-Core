@@ -1,58 +1,64 @@
-# Ignore Composer dependencies and all scaffolded Drupal files
-/drupal/vendor/
-/drupal/composer.lock
-/drupal/web/*
-!/drupal/web/sites/
-!/drupal/web/sites/default/
-/drupal/web/sites/README.txt
-/drupal/web/sites/development.services.yml
-/drupal/web/sites/example.settings.local.php
-/drupal/web/sites/example.sites.php
-/drupal/web/sites/default/default.services.yml
-/drupal/web/sites/default/default.settings.php
-/drupal/web/sites/default/files/
-/drupal/web/sites/default/files-*/
-/drupal/web/sites/default/files-private/
-/drupal/web/sites/default/files-public/
-/drupal/web/modules/contrib/
-/drupal/web/themes/contrib/
-/drupal/web/profiles/
+# Ignore everything in docroot by default
+/docroot/*
 
-# DDEV and Drush
-.ddev/
-.drush/
-*.ddev.site
+# Track only specific files and directories
+!/docroot/composer.json
+!/docroot/.ddev/
+!/docroot/web/modules/custom/
+!/docroot/web/themes/custom/
+!/docroot/web/profiles/custom/
+!/docroot/web/sites/default/
 
-# Node/React (future frontend)
-/node_modules/
-/.next/
+# Drupal configuration files that may contain sensitive information
+/docroot/web/sites/*/settings*.php
+/docroot/web/sites/*/services*.yml
+/docroot/web/sites/*/settings.local.php
+/docroot/web/sites/development.services.yml
+
+# Drupal user-generated content
+/docroot/web/sites/*/files/
+/docroot/web/sites/*/private/
+/docroot/web/sites/simpletest/
+
+# DDEV configuration and files
+/.ddev/docker-compose.yaml
+/.ddev/db_snapshots/
+/.ddev/.gitignore
+/.ddev/.dbimageBuild
+
+# Development files
 .env
-.env.*
-
-# OS and IDE
+.env.local
+*.log
+*.sql
+*.sqlite
 .DS_Store
-Thumbs.db
-*.swp
-*.swo
-*.bak
-*.tmp
 .idea/
 .vscode/
+*.sublime-workspace
+*.sublime-project
 
-# Logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-*.log
+# Composer files
+composer.phar
+/docroot/vendor/
+/docroot/composer.lock
 
-# Build output
-/build/
-/dist/
+# Frontend dependencies (if applicable)
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
 
-# Test coverage
-/coverage/
+# Build artifacts
+/docroot/web/sites/*/translations/
+/docroot/web/sites/*/tmp/
+/docroot/web/sites/*/cache/
 
-# JS lock files
-package-lock.json
-yarn.lock
-pnpm-lock.yaml
+# Backup files
+*.bak
+*.swp
+*~
+
+# Local development configuration
+/docroot/web/sites/*/settings.local.php
+/docroot/web/sites/development.services.yml
