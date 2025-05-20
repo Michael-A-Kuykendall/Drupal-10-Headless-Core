@@ -1,0 +1,58 @@
+# Ignore Composer dependencies and all scaffolded Drupal files
+/drupal/vendor/
+/drupal/composer.lock
+/drupal/web/*
+!/drupal/web/sites/
+!/drupal/web/sites/default/
+/drupal/web/sites/README.txt
+/drupal/web/sites/development.services.yml
+/drupal/web/sites/example.settings.local.php
+/drupal/web/sites/example.sites.php
+/drupal/web/sites/default/default.services.yml
+/drupal/web/sites/default/default.settings.php
+/drupal/web/sites/default/files/
+/drupal/web/sites/default/files-*/
+/drupal/web/sites/default/files-private/
+/drupal/web/sites/default/files-public/
+/drupal/web/modules/contrib/
+/drupal/web/themes/contrib/
+/drupal/web/profiles/
+
+# DDEV and Drush
+.ddev/
+.drush/
+*.ddev.site
+
+# Node/React (future frontend)
+/node_modules/
+/.next/
+.env
+.env.*
+
+# OS and IDE
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.bak
+*.tmp
+.idea/
+.vscode/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# Build output
+/build/
+/dist/
+
+# Test coverage
+/coverage/
+
+# JS lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
